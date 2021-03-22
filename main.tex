@@ -1,0 +1,348 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\title{Spark and Big Data Processing}
+\author{Filip Peterek}
+\institute{Technical University of Ostrava}
+\date{March 2021}
+
+\AtBeginSection[] {
+    \begin{frame}
+        \frametitle{Big Table of Big Contents}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Big Table of Big Contents}
+\tableofcontents
+\end{frame}
+
+\section{Big Data (Little Penis)}
+
+\begin{frame}
+\frametitle{What is Big Data}
+
+\begin{itemize}
+    \item Large volumes of data
+    \item Cannot be processed using traditional methods
+    \item Often unstructured
+    \item Though some form of a structure is highly desirable
+    \item Parallel processing is required
+    \item Big Data is not just the dataset, but also the entire field which focuses on handling of such large datasets
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Utilization of Big Data}
+
+\begin{itemize}
+    \item Statistics
+    \item Business intelligence
+    \item Machine learning
+    \item Determining common denominators
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Little Benefit?}
+So is Big Data just another way of exploiting user data to make more money?
+\end{frame}
+
+\begin{frame}
+\frametitle{The Big Question of Big Data?}
+Is Big Data evil?
+\end{frame}
+
+\begin{frame}
+\frametitle{The Big Answer to the Big Question}
+No. \pause Big Data is a tool. \pause Big Data is nothing more than a tool used to analyze and handle data. It's as evil as any
+other tool.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The Big Evil}
+Big Data is as evil as a hammer, a screwdriver, a car, a brick
+\end{frame}
+
+\begin{frame}
+\frametitle{The Big Danger of Big Data}
+Is Big Data dangerous?
+\end{frame}
+
+\begin{frame}
+\frametitle{The Big Danger of Big Data}
+Is a gun dangerous? \pause Depends on who's holding the gun. \pause
+
+Is a gun dangerous in the hands of a police officer? \pause Only if you're black.
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big Benefits}
+Profits of a company and the benetifs of society are not mutually exclusive \pause
+
+\begin{itemize}
+    \item Think Apple Watch
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Uses of Big Data}
+\begin{itemize}
+    \item Medicine and Healthcare
+    \item Infrastructure
+    \item Smart cities (think Singapore)
+    \item Environmental issues (think Singapore)
+    \item Improving tools that make life easier (think for profit companies)
+\end{itemize}
+\end{frame}
+
+\section{My Hadoop Is Bigger Than Yours}
+
+\begin{frame}
+\frametitle{Big Data, Big Tools}
+Hadoop is a word often used when talking about Big Data \pause
+
+So what exactly is Hadoop?
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big Cluster}
+Apache Hadoop
+
+\begin{itemize}
+    \item Framework for distributed processing of large datasets
+    \item Consists of many open source technologies
+        \begin{itemize}
+            \item Yarn
+            \item HDFS
+            \item MapReduce
+        \end{itemize}
+    \item Usually runs on a cluster
+        \begin{itemize}
+            \item Master
+            \item Executors
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big Community}
+There is also a lot of related Big Data Processing tools, which work well in combination with Hadoop
+
+\begin{itemize}
+    \item Cassandra
+    \item HBase
+    \item Avro
+    \item Kafka
+    \item Pig
+    \item Spark
+\end{itemize}
+\end{frame}
+
+\section{Apache Spark}
+
+\begin{frame}
+\frametitle{Big Spark, Big Fire}
+What is Spark?
+\begin{itemize}
+    \item Latest and greatest Big Data processing tool
+    \item Two modes -- standalone and Hadoop
+    \item Replacement for MapReduce
+        \begin{itemize}
+            \item Faster
+            \item Smarter
+            \item More readable
+            \item Easier to use
+            \item Less terrible language
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Spark, Big Fire}
+What is Spark?
+\begin{itemize}
+    \item Written in Scala
+    \item Runs on JVM, just like the rest of Hadoop
+    \item Can be used with any JVM language
+        \begin{itemize}
+            \item Scala works the best as Spark was built to work with Scala
+            \item Java is oficially suported, but is a terrible language
+            \item Kotlin support is being worked on, but is currently subpar (source: experience)
+            \item Other JVM languages can use Java API
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big Transformations}
+The core of Big Data processing is the application of lazy transformations on immutable datasets
+\begin{itemize}
+    \item RDD -- Resilient Distributed Dataset
+        \begin{itemize}
+            \item Resilient and Fault Tolerant
+            \item Consists of both data and a set of applied data transformations
+            \item Immutable
+            \item Low level, though there are higher level abstractions over RDD
+        \end{itemize}
+    \item Functionally pure, lazy transformations
+        \begin{itemize}
+            \item Map
+            \item Filter
+            \item Fold
+            \item Reduce
+            \item Select
+            \item Group By
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big Schema}
+As mentioned before, structure is highly desirable
+\begin{itemize}
+    \item Unstructured data should be given a structure
+    \begin{itemize}
+        \item Tabular data
+        \item JVM objects
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big Structures}
+There are multiple data structures in Spark
+\begin{itemize}
+    \item RDD
+        \begin{itemize}
+            \item Low level generic structure consisting of data of any non-primitive data type
+            \item Divided into partitions
+        \end{itemize}
+
+    \item Dataset
+        \begin{itemize}
+            \item High level abstraction over RDD
+            \item Provides higher level API
+        \end{itemize}
+
+    \item DataFrame
+        \begin{itemize}
+            \item Typealias for Dataset[Row]
+            \item Represents tabular data
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big Rows}
+Row is an essential data type for working with tabular data
+\begin{itemize}
+    \item Represents a single row of a table
+    \item Data is described by a schema
+    \item Not a template, fields are void*
+        \begin{itemize}
+            \item Types are checked at runtime
+            \item Programmer should make sure to respect the schema to avoid runtime errors
+        \end{itemize}
+    \item Structure is not necessarily flat
+        \begin{itemize}
+            \item Arrays
+            \item Row fields inside other Rows
+            \item Row is more of a struct rather than an untyped array
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big APIs}
+Transformations can be applied in multiple ways
+\begin{itemize}
+    \item SQL
+        \begin{itemize}
+            \item Programmers can write SQL queries
+            \item Works well with tabular data
+            \item Supports SQL constructs and UDFs
+        \end{itemize}
+    \item RDD/Dataset API
+        \begin{itemize}
+            \item RDD or Dataset methods
+            \item Uses Scala methods and lambda functions to apply transformations
+            \item In it's essence very similar to writing SQL queries
+            \item Can be used with custom classes, not just Rows
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big Performance}
+Performance is critical when working with large datasets
+\begin{itemize}
+    \item Plan generation, optimization and execution
+        \begin{itemize}
+            \item Transformations are not applied directly
+            \item Instead, a plan is generated
+            \item Said plan is then optimized
+            \item Optimized plan is compiled to JVM bytecode and transferred to executors
+            \item Executors execute code
+            \item Driver (master) controls executors
+            \item When execution is finished, driver collects the results
+        \end{itemize}
+    \item Lazy evaluation
+        \begin{itemize}
+            \item Allows Spark to avoid unnecessary operations
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big Formats}
+Multiple formats are used when working with Big Data
+\begin{itemize}
+    \item CSV
+        \begin{itemize}
+            \item Simple, human readable format
+            \item Nested structures slightly more difficult to implement
+            \item Slow to process, large files due to plaintext nature
+        \end{itemize}
+    \item Avro
+        \begin{itemize}
+            \item Binary format
+            \item Requires schema
+            \item Custom classes emitted by Avro compiler
+        \end{itemize}
+    \item Parquet
+        \begin{itemize}
+            \item Binary format
+            \item Self-described, doesn't require an external schema
+            \item Parsed into Spark Rows
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big Mess of a Presentation}
+Any questions?
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big Thanks}
+Thank you for at least not disturbing since none of you were paying attention anyway
+\end{frame}
+
+\begin{frame}
+\frametitle{Big Data, Big Sources}
+https://hadoop.apache.org
+
+https://spark.apache.org
+\end{frame}
+
+\end{document}
+
